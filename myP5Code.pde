@@ -4,18 +4,21 @@ void setup() {
 }
 
 //🎯Variable Declarations Go Here
-
+ var ballX = 100;
+ var ballY = 250;
 
 //🟢Draw Procedure - Runs on Repeat
 draw = function(){
- 
+
+  
   background(255,255,255,0);
   
+ellipse (ballX, ballY, 70, 70);
 
 
 
 
-
+}
 
   if(mousePressed){showXYPositions();}
 
