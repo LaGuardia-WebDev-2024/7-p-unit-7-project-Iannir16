@@ -13,12 +13,14 @@ draw = function(){
   
   background(255,255,255,0);
   
-ellipse (ballX, ballY, 70, 70);
+ellipse(ballX, ballY, 70, 70);
+
+ballX += 2
+ballY -= .5
 
 
 
 
-}
 
   if(mousePressed){showXYPositions();}
 
