@@ -5,18 +5,38 @@ void setup() {
 
 //🎯Variable Declarations Go Here
  var ballX = 100;
- var ballY = 250;
+ var ballY = 270;
+
+ var ballXdir = 4;
+ var ballYdir = 1.5;
 
 //🟢Draw Procedure - Runs on Repeat
 draw = function(){
 
   
   background(255,255,255,0);
+
+
+
   
 ellipse(ballX, ballY, 70, 70);
 
-ballX += 2
-ballY -= .5
+ballX += ballXdir
+ballY -= ballYdir
+
+
+if(ballX< 100){
+  ballXdir = +4;
+  ballYdir = +1.5;
+}
+
+if(ballX> 450){
+  ballXdir = -4;
+  ballYdir = -1.5;
+}
+
+
+
 
 
 
