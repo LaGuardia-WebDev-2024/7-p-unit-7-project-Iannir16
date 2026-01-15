@@ -8,16 +8,18 @@ void setup() {
  var ballX = 100;
  var ballY = 270;
 
- var ballXdir = 4;
+ var ballXdir = 6;
  var ballYdir = 1.5;
 
 //spiker
 var spikerX = 500;
 var spikerY = 270;
 
-var spikerYdir = .5;
+var spikerYdir = 1.5;
 
-
+//receiver
+var receiverX = 50
+var receiverY = 280
 
 
 
@@ -26,26 +28,46 @@ draw = function(){
 
   
   background(255,255,255,0);
+
+  line(300,310, 300,384)
+  
+
+//Receiver movement
+fill(215, 143, 49)
+line(receiverX, receiverY-5, receiverX+55, receiverY+9 );//arms
+ellipse(receiverX+55, receiverY+9, 15, 20);//hand
+ellipse(receiverX, receiverY-40, 50, 50);//head
+fill(205, 64, 22)
+ellipse(receiverX, receiverY+30, 50, 90);//body
+fill(255,255,255)
+ellipse(receiverX+10, receiverY-44, 7, 7);//eye
+
+
 //spiker movement
+fill(215, 143, 49)
 line(spikerX, spikerY+30, spikerX-46, spikerY-59);//arms
 ellipse(spikerX-42, spikerY-59, 15, 20);//hand
-ellipse(spikerX, spikerY+30, 50, 90);//body
 ellipse(spikerX, spikerY-40, 50, 50);//head
+fill(22, 95, 205)
+ellipse(spikerX, spikerY+30, 50, 90);//body
+fill(255,255,255)
+ellipse(spikerX-10, spikerY-44, 7, 7);
 
-spikerY += spikerYdir
+spikerY += spikerYdir;
 
 
-if(spikerY< 100){
-  spikerYdir = -.5;
+if(spikerY< 225){
+  spikerYdir = 1.5;
 }
 
-/*
-if(spikerY< 100){
-  spikerYdir = +.5;
+
+if(spikerY> 300){
+  spikerYdir = -1.5;
 }
-*/
+
 
 //volleyball movement 
+fill(255, 255, 255)
 ellipse(ballX, ballY, 70, 70);
 
 ballX += ballXdir
@@ -53,12 +75,12 @@ ballY -= ballYdir
 
 
 if(ballX< 100){
-  ballXdir = +4;
+  ballXdir = +6;
   ballYdir = +1.5;
 }
 
 if(ballX> 450){
-  ballXdir = -4;
+  ballXdir = -6;
   ballYdir = -1.5;
 }
 
